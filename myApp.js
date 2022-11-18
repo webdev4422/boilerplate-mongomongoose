@@ -14,8 +14,33 @@ const personSchema = new mongoose.Schema({
 let Person = mongoose.model("Person", personSchema);
 
 
+// // Create model(Person) instance - variant 1
+let ada = new Person({
+    name: "Ada",
+    age: 22,
+    favoriteFoods: ["porridge", "eggs", "yogurt"]
+})
+// Save model instance (ada)
+ada.save()
+.then(doc => {
+  console.log(doc)
+})
+.catch(err => {
+  console.error(err)
+})
+
+
+// Create and save model instance (ada) - variant 2 - NOT WORK !?
 const createAndSavePerson = (done) => {
-  done(null /*, data*/);
+  // let ada = new Person({
+  //   name: "Ada",
+  //   age: 22,
+  //   favoriteFoods: ["porridge", "eggs", "yogurt"]
+  // })
+  // ada.save(function(err, data) {
+  //   if (err) return console.error(err);
+  //   done(null, data);
+  // });
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
