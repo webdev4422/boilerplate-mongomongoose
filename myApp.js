@@ -1,6 +1,6 @@
 require('dotenv').config();
 let mongoose = require('mongoose');
-// Connect to database
+// Connect to database; .env example: MONGODB_URI="mongodb+srv://user:root@cluster0.dpcylwq.mongodb.net/fcc-message-board?retryWrites=true&w=majority"; retryWrites=true -> automatically retry certain write operations a single time if they encounter network errors; w=majority -> requests acknowledgment that the write operation has propagated
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Create schema
